@@ -1,46 +1,65 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kryon Beta</title>
-  <link rel="stylesheet" href="css/style.css" />
-  <script defer src="js/main.js"></script> <!-- Pastikan JS dimuat setelah konten -->
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>Katalog - Kryon</title>
+	<meta name="description" content="Kryon adalah solusi percetakan terpercaya untuk semua kebutuhan Anda. Melayani cetak undangan, brosur, spanduk, kartu nama, dan merchandise custom dengan kualitas terbaik dan harga bersahabat.">
+	<meta name="keywords" content="Kryon percetakan, jasa cetak terpercaya, solusi percetakan terbaik, percetakan berkualitas, percetakan murah, cepat">
+	<meta name="author" content="Kryon">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Katalog - Kryon">
+	<meta property="og:description" content="Kryon adalah solusi percetakan terpercaya untuk semua kebutuhan Anda. Melayani cetak undangan, brosur, spanduk, kartu nama, dan merchandise custom dengan kualitas terbaik dan harga bersahabat.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.karyaion.my.id">
+	<meta property="og:image" content="https://ik.imagekit.io/mustofa/web/img/logo-kryon-banner.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Katalog - Kryon">
+	<meta name="twitter:description" content="Kryon adalah solusi percetakan terpercaya untuk semua kebutuhan Anda. Melayani cetak undangan, brosur, spanduk, kartu nama, dan merchandise custom dengan kualitas terbaik dan harga bersahabat.">
+	<meta name="twitter:image" content="https://ik.imagekit.io/mustofa/web/img/logo-kryon-banner.png">
+	<link rel="icon" href="https://ik.imagekit.io/mustofa/web/img/logo-kryon-kotak.png" type="image/png">
+	<link rel="apple-touch-icon" href="https://ik.imagekit.io/mustofa/web/img/logo-kryon-kotak.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  
+
+	<script src="js/main.js" defer></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-
-  <!-- HEADER -->
-  <header>
-    <div class="container flex row flex-align-center flex-justify-between">
-      <div id="nav">
-        <div class="container-20p">
-          <span class="menu-toggle" id="burger">☰</span>
-        </div>
-        <div class="container-60p">
-          <img src="https://ik.imagekit.io/mustofa/web/img/logo-kryon-teks.png" alt="Logo Kryon Teks" style="height:30px;">
-        </div>
-        <div class="container-20p"></div>
+<div class="container flex column" id="loading-screen">
+	<div class="spinner"></div>
+</div>
+  <main id="main">
+    <header>
+      <div class="container flex row flex-align-center flex-justify-center">
+			<div id="nav">
+			<div class="container-20p"><span class="menu-toggle" id="burger">☰</span></div>
+			<div class="container-60p"><img src="https://ik.imagekit.io/mustofa/web/img/logo-kryon-teks.png" alt="Logo Kryon Teks" style="height:30px;"></div>
+			<div class="container-20p"></div>
+			</div>
+			<div class="dropdown imp-hidden" id="dropdownMenu"></div>
       </div>
-      <div class="dropdown imp-hidden" id="dropdownMenu"></div>
+    </header>
+    <div class="container">
+      <img src="https://ik.imagekit.io/mustofa/web/img/bannerweb-kryon.png" alt="Banner">
     </div>
-  </header>
+    <div class="container flex row flex-justify-space-evenly" style="padding:20px;">
+      <button class="whatsapp" onclick="chatAdmin('Hallo kak, saya ingin bertanya tentang produk Kryon')">
+        <img src="https://ik.imagekit.io/mustofa/web/img/icon-wa.png" class="icon-small"> Hubungi Kami
+      </button>
+    </div>
 
-  <!-- SECTION: Layanan -->
-  <section class="container" id="layanan">
-    <h1 class="nama_layanan" id="judul"></h1>
-    <p class="keterangan_layanan" id="deskripsi"></p>
-  </section>
-
-  <!-- FILTER PRODUK -->
-  <section class="container scroll-x flex row flex-align-center" id="produk-filter"></section>
-
-  <!-- KONTEN PRODUK -->
-  <section class="container flex-wrap flex-align-center flex-justify-center" id="produk-container"></section>
-
-  <!-- FOOTER -->
-  <footer class="container">
-    <p class="center">Kryon Beta - All rights reserved</p>
-  </footer>
-
+    <div class="container" style="padding:10px;">
+      <h1 class="nama_layanan" id="judul"></h1><br>
+      <p class="keterangan_layanan" id="deskripsi"></p>
+    </div>
+	<div class="container scroll-x flex row flex-align-center" id="produk-filter"></div>
+    <div class="container flex-wrap flex-align-center flex-justify-center">
+      <div class="produk-container" id="produk-container"></div>
+    </div>
+  </main>
 </body>
 </html>

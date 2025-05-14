@@ -1,5 +1,5 @@
 //redirect www khusus github page
-
+/*
 (function redirectToWWW() {
   const hostname = window.location.hostname;
   
@@ -33,7 +33,7 @@ function insertGtagScript() {
   head.appendChild(gtagScript);
   head.appendChild(gtagConfigScript);
 }
-
+*/
 /*Variabel*/
 let dirImg = 'https://ik.imagekit.io/mustofa/web/img/';
 let timerPopWa;
@@ -50,7 +50,7 @@ burger.addEventListener('click', () => {
 const fungsiMap = {
   productRendering,
   productRenderingWithFilters,
-  insertGtagScript,
+  //insertGtagScript,
   addElementAfterBody,
   lazyLoadImg,
   addElement,
@@ -88,7 +88,7 @@ async function init() {
 	fungsiDefault();
 }
 async function fungsiDefault() {
-	await insertGtagScript();
+	//await insertGtagScript();
 	await loadMenu();
 	await addElementAfterBody();
 	await addElement();
@@ -437,7 +437,6 @@ function cekDanSync() {
 }
 async function syncData() {
   try {
-	document.getElementById("status").innerText = "Memproses...";
     const res1 = await fetch("https://wam-kryon-api.vercel.app/api/gaps-v1", {
       method: "POST",
       headers: { "Content-Type": "application/json" },

@@ -68,27 +68,36 @@ header {
 .nama_layanan {
     font-size: 2rem;
     margin-bottom: 10px;
+	padding: 0 15px;
 }
 
 .keterangan_layanan {
     font-size: 1.2rem;
     color: #555;
+	margin-bottom: 20px;
+    padding: 0 15px;
 }
 
 /* PRODUK FILTER */
 #produk-filter {
     display: flex;
     justify-content: flex-start;
-    padding: 15px 0;
     gap: 15px;
     flex-wrap: wrap;
+    margin: 15px 0;
+}
+@media (max-width: 767px) {
+    #produk-filter {
+        flex-direction: column;
+        align-items: center; /* Agar filter lebih compact dan teratur di mobile */
+    }
 }
 
 /* PRODUK CONTAINER */
 #produk-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 15px;
+    gap: 30px; /* Menambahkan jarak antar produk */
     padding: 20px 0;
 }
 
@@ -101,11 +110,12 @@ header {
 
 /* FOOTER */
 footer {
-    text-align: center;
-    padding: 10px;
+    padding: 20px 0; /* Menambahkan padding agar footer lebih seimbang */
     background-color: #333;
     color: #fff;
+    text-align: center;
 }
+
 
 /* MEDIA QUERIES */
 
@@ -156,5 +166,14 @@ footer {
 
     #produk-container {
         grid-template-columns: repeat(4, 1fr); /* 4 kolom untuk desktop */
+    }
+}
+#burger {
+    display: none; /* Pastikan tombol burger hanya muncul di mobile */
+}
+
+@media (max-width: 767px) {
+    #burger {
+        display: block; /* Tampilkan tombol burger di mobile */
     }
 }

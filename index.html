@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<title>Katalog - Kryon</title>
+	<meta name="description" content="Kryon adalah solusi percetakan terpercaya untuk semua kebutuhan Anda. Melayani cetak undangan, brosur, spanduk, kartu nama, dan merchandise custom dengan kualitas terbaik dan harga bersahabat.">
+	<meta name="keywords" content="Kryon percetakan, jasa cetak terpercaya, solusi percetakan terbaik, percetakan berkualitas, percetakan murah, cepat">
+	<meta name="author" content="Kryon">
+	<meta name="robots" content="index, follow">
+	<meta property="og:title" content="Katalog - Kryon">
+	<meta property="og:description" content="Kryon adalah solusi percetakan terpercaya untuk semua kebutuhan Anda. Melayani cetak undangan, brosur, spanduk, kartu nama, dan merchandise custom dengan kualitas terbaik dan harga bersahabat.">
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://www.karyaion.my.id">
+	<meta property="og:image" content="https://ik.imagekit.io/mustofa/web/img/logo-kryon-banner.png">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Katalog - Kryon">
+	<meta name="twitter:description" content="Kryon adalah solusi percetakan terpercaya untuk semua kebutuhan Anda. Melayani cetak undangan, brosur, spanduk, kartu nama, dan merchandise custom dengan kualitas terbaik dan harga bersahabat.">
+	<meta name="twitter:image" content="https://ik.imagekit.io/mustofa/web/img/logo-kryon-banner.png">
+	<link rel="icon" href="https://ik.imagekit.io/mustofa/web/img/logo-kryon-kotak.png" type="image/png">
+	<link rel="apple-touch-icon" href="https://ik.imagekit.io/mustofa/web/img/logo-kryon-kotak.png">
+	<meta name="theme-color" content="#ffffff">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">  
+
+	<script src="js/main.js" defer></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="css/main.css">
+  <style>
+    /* --- Base Styles (Mobile First) --- */
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #fff;
+      border-bottom: 1px solid #ddd;
+      padding: 10px 0;
+    }
+
+    .container {
+      width: 100%;
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    .produk-container {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    /* Scroll horizontal container (produk filter) */
+    .scroll-x {
+      overflow-x: auto;
+      padding: 10px 0;
+    }
+
+    /* --- Desktop Styles --- */
+    @media (min-width: 768px) {
+      .container {
+        max-width: 1024px;
+        margin: auto;
+      }
+
+      .produk-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      #produk-container > .produk-item {
+        flex: 1 1 calc(33.33% - 20px);
+        box-sizing: border-box;
+        margin-bottom: 24px;
+      }
+
+      .scroll-x {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      header .container.flex {
+        justify-content: space-between;
+        padding: 0 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container flex column" id="loading-screen">
+	<div class="spinner"></div>
+</div>
+  <main id="main">
+    <header>
+      <div class="container flex row flex-align-center flex-justify-center">
+			<div id="nav">
+			<div class="container-20p"><span class="menu-toggle" id="burger">☰</span></div>
+			<div class="container-60p"><img src="https://ik.imagekit.io/mustofa/web/img/logo-kryon-teks.png" alt="Logo Kryon Teks" style="height:30px;"></div>
+			<div class="container-20p"></div>
+			</div>
+			<div class="dropdown imp-hidden" id="dropdownMenu"></div>
+      </div>
+    </header>
+    <div class="container">
+      <img src="https://ik.imagekit.io/mustofa/web/img/bannerweb-kryon.png" alt="Banner">
+    </div>
+    <div class="container flex row flex-justify-space-evenly" style="padding:20px;">
+      <button class="whatsapp" onclick="chatAdmin('Hallo kak, saya ingin bertanya tentang produk Kryon')">
+        <img src="https://ik.imagekit.io/mustofa/web/img/icon-wa.png" class="icon-small"> Hubungi Kami
+      </button>
+    </div>
+
+    <div class="container" style="padding:10px;">
+      <h1 class="nama_layanan" id="judul"></h1><br>
+      <p class="keterangan_layanan" id="deskripsi"></p>
+    </div>
+	<div class="container scroll-x flex row flex-align-center" id="produk-filter"></div>
+    <div class="container flex-wrap flex-align-center flex-justify-center">
+      <div class="produk-container" id="produk-container"></div>
+    </div>
+  </main>
+</body>
+</html>

@@ -227,3 +227,67 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+  function getCleanDomain() {
+    return window.location.hostname;
+  }
+  document.querySelectorAll('.data-domain').forEach(el => {
+    el.textContent = getCleanDomain();
+  });
+  
+  function getCurrentYear() {
+  return new Date().getFullYear();
+  }
+  
+  document.querySelectorAll('.data-tahun').forEach(el => {
+  el.textContent = getCurrentYear();
+  });
+  function lazyLoadImg() {
+  const images = document.querySelectorAll("img");
+  images.forEach(img => {
+    if (!img.hasAttribute("loading")) {
+      img.setAttribute("loading", "lazy");
+    }
+  });
+}
+
+function sharePage(title, text) {
+  const currentUrl = window.location.href;
+  const combinedMessage = `${text}\n${currentUrl}`;
+  const encodedMessage = encodeURIComponent(combinedMessage);
+  if (navigator.share) {
+    navigator.share({
+      title: title,
+      text: text,
+      url: currentUrl,
+    }).then(() => {
+      console.log('Berhasil dibagikan');
+    }).catch((error) => {
+      console.error('Gagal membagikan', error);
+    });
+  } else {
+    alert(`Bagikan link ini ke temanmu:\n\n${currentUrl}`);
+  }
+}
+document.addEventListener('DOMContentLoaded', function () {
+	
+	lazyLoadImg();
+	
+  const form = document.getElementById('whatsapp-form');
+
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById('name-field').value.trim();
+      const message = document.getElementById('message-field').value.trim();
+
+      const phoneNumber = '6285246668976';
+      const text = `Halo, saya *${name}* ingin menyampaikan:\n\n${message}`;
+      const encodedText = encodeURIComponent(text);
+
+      const waUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+      window.open(waUrl, '_blank');
+    });
+  }
+});
